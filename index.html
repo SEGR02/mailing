@@ -16,9 +16,11 @@
         font-family: "Poppins", sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #f4f4f4;
       }
 
-      .main-table {
+      .card {
+        font-family: "Poppins", sans-serif;
         background-image: url("https://res.cloudinary.com/doxahduh8/image/upload/v1732408567/fondo-mas_xohfah.jpg");
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -26,17 +28,15 @@
       }
 
       .card-container {
-        width: 100%;
-      }
-
-      .card-row {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 20px;
       }
 
       .card-item {
-        width: 48%;
+        flex: 1 1 48%;
+        box-sizing: border-box;
         padding: 10px;
         border-radius: 10px;
         text-align: center;
@@ -46,8 +46,6 @@
         max-width: 100%;
         border-radius: 1.5rem;
         object-fit: cover;
-        aspect-ratio: 1/1;
-        height: auto;
       }
 
       .card-item p {
@@ -63,18 +61,15 @@
       }
 
       @media (max-width: 600px) {
-        .card-row {
-          display: block;
+        .card-container {
+          flex-direction: column;
+          align-items: center;
         }
-        .card-item {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
 
-      @media (prefers-color-scheme: dark) {
-        .my-profile {
-          color: #41c6ce !important;
+        .card-item {
+          flex: 1 1 100%;
+          margin-bottom: 20px;
+          width: 60%;
         }
       }
     </style>
@@ -103,7 +98,7 @@
             cellpadding="0"
             cellspacing="0"
             style="background-color: #ffffff"
-            class="main-table"
+            class="card"
           >
             <tr>
               <td style="text-align: start; padding: 20px">
@@ -141,7 +136,6 @@
                     <td align="center">
                       <a
                         href="#"
-                        class="my-profile"
                         style="
                           background-color: #41c6ce;
                           font-size: 16px;
@@ -160,75 +154,29 @@
                 </table>
               </td>
             </tr>
-            <table
-              cellpadding="0"
-              cellspacing="0"
-              style="width: 100%; table-layout: fixed"
-              class="card"
-            >
-              <tr>
-                <td style="padding: 20px">
-                  <div class="card-row">
-                    <div class="card-item">
-                      <img
-                        src="https://res.cloudinary.com/doxahduh8/image/upload/v1732407233/DALL_E_2024-11-23_19.13.20_-_Create_a_high-quality_visually_appealing_image_suitable_for_a_mailing_campaign._The_image_should_feature_a_vibrant_and_colorful_arrangement_of_fresh_mufrkx.webp"
-                        alt="Logo de agriNews Campus"
-                        width="220"
-                        height="220"
-                        style="
-                          border-radius: 1.5rem;
-                          display: block;
-                          margin: 0 auto;
-                        "
-                      />
-                      <p
-                        style="font-size: 14px; margin: 10px auto; color: #000"
-                      >
-                        Apúntese al 3er curso de incubación desde hoy
-                      </p>
-                      <a
-                        href="#"
-                        style="
-                          color: #000;
-                          font-size: 15px;
-                          font-weight: bold;
-                          text-decoration: none;
-                        "
-                        >VER MÁS →</a
-                      >
-                    </div>
-                    <div class="card-item">
-                      <img
-                        src="https://res.cloudinary.com/doxahduh8/image/upload/v1732407456/copy_qrtvi0.png"
-                        alt="Logo de agriNews Campus"
-                        width="220"
-                        height="220"
-                        style="
-                          border-radius: 1.5rem;
-                          display: block;
-                          margin: 0 auto;
-                        "
-                      />
-                      <p
-                        style="font-size: 14px; margin: 10px auto; color: #000"
-                      >
-                        50 aniversario del cerdo ibérico
-                      </p>
-                      <a
-                        href="#"
-                        style="
-                          color: #000;
-                          font-size: 15px;
-                          font-weight: bold;
-                          text-decoration: none;
-                        "
-                        >VER MÁS →</a
-                      >
-                    </div>
+            <tr>
+              <td style="padding: 20px">
+                <!-- Contenedor de las tarjetas -->
+                <div class="card-container">
+                  <div class="card-item">
+                    <img
+                      src="https://res.cloudinary.com/doxahduh8/image/upload/v1732407233/DALL_E_2024-11-23_19.13.20_-_Create_a_high-quality_visually_appealing_image_suitable_for_a_mailing_campaign._The_image_should_feature_a_vibrant_and_colorful_arrangement_of_fresh_mufrkx.webp"
+                      alt="Logo de agriNews Campus"
+                    />
+                    <p>Apúntese al 3er curso de incubación desde hoy</p>
+                    <a href="#">VER MÁS →</a>
                   </div>
-                </td>
-              </tr>
-            </table>
+                  <div class="card-item">
+                    <img
+                      src="https://res.cloudinary.com/doxahduh8/image/upload/v1732407456/copy_qrtvi0.png"
+                      alt="Logo de agriNews Campus"
+                    />
+                    <p>50 aniversario del cerdo ibérico</p>
+                    <a href="#">VER MÁS →</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
             <tr>
               <td style="padding: 20px; text-align: center">
                 <p style="font-size: 25px; color: #fff; font-weight: bold">
